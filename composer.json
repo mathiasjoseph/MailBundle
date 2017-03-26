@@ -1,13 +1,13 @@
 {
-  "name" : "mikycorp/mediabundle",
-  "description" : "A Media bundle",
+  "name" : "mikycorp/mailbundle",
+  "description" : "A Mail bundle",
   "type" : "symfony-bundle",
   "authors" : [{
     "name" : "Mathias Joseph",
     "email" : "mathias89100@gmail.com"
   }],
   "keywords" : [
-    "media bundle"
+    "mail bundle"
   ],
   "license" : [
     "MIT"
@@ -27,10 +27,10 @@
   },
   "autoload" : {
     "psr-0" : {
-      "Miky\\Bundle\\MediaBundle" : ""
+      "Miky\\Bundle\\MailBundle" : ""
     }
   },
-  "target-dir" : "Miky/Bundle/MediaBundle",
+  "target-dir" : "Miky/Bundle/MailBundle",
   "repositories" : [{
   }],
   "extra" : {
