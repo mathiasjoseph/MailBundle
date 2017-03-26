@@ -1,0 +1,11 @@
+adevis_admin_mail:
+    resource: "@MikyMailBundle/Resources/config/routing/back.yml"
+    prefix : /%admin_prefix_path%
+
+adevis_app_mail:
+    resource: "@MikyMailBundle/Resources/config/routing/front.yml"
+    prefix : /mail
+
+adevis_api_mail:
+    resource: "@MikyMailBundle/Resources/config/routing/api.yml"
+    prefix : /api/mail

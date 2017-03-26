@@ -1,0 +1,45 @@
+adevis_resource:
+    drivers:
+        - doctrine/orm
+    resources:
+        adevis.mail_type:
+            classes:
+                model: %mail_type.entity.class%
+            contexts:
+                admin: ~
+adevis_grid:
+    grids:
+        adevis_admin_mail_type:
+            driver:
+                options:
+                    class: %mail_type.entity.class%
+            sorting:
+                createdAt:
+                    path: createdAt
+                    direction: asc
+            fields:
+                name:
+                    type: string
+                    label: adevis.ui.name
+                enabled:
+                    type: twig
+                    label: adevis.ui.enabled
+                    options:
+                        template: MikyAdminBundle:Grid/Field:enabled.html.twig
+            filters:
+                name:
+                    type: string
+                    label: adevis.ui.name
+                enabled:
+                    type: boolean
+                    label: adevis.ui.enabled
+            actions:
+                main:
+                    create:
+                        type: create
+                item:
+                    update:
+                        type: update
+                    delete:
+                        type: delete
+
