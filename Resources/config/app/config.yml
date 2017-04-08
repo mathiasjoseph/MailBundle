@@ -1,15 +1,15 @@
-adevis_resource:
+miky_resource:
     drivers:
         - doctrine/orm
     resources:
-        adevis.mail_type:
+        miky.mail_type:
             classes:
                 model: %mail_type.entity.class%
             contexts:
                 admin: ~
-adevis_grid:
+miky_grid:
     grids:
-        adevis_admin_mail_type:
+        miky_admin_mail_type:
             driver:
                 options:
                     class: %mail_type.entity.class%
@@ -20,19 +20,19 @@ adevis_grid:
             fields:
                 name:
                     type: string
-                    label: adevis.ui.name
+                    label: miky.ui.name
                 enabled:
                     type: twig
-                    label: adevis.ui.enabled
+                    label: miky.ui.enabled
                     options:
                         template: MikyAdminBundle:Grid/Field:enabled.html.twig
             filters:
                 name:
                     type: string
-                    label: adevis.ui.name
+                    label: miky.ui.name
                 enabled:
                     type: boolean
-                    label: adevis.ui.enabled
+                    label: miky.ui.enabled
             actions:
                 main:
                     create:

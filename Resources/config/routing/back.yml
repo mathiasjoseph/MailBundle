@@ -1,17 +1,17 @@
-adevis_admin_project:
+miky_admin_project:
     resource: |
-        alias: adevis.project
+        alias: miky.project
         section: admin
         context: admin
         templates: MikyAdminBundle:Crud
         redirect: update
-        grid: adevis_admin_project
-        form: adevis_admin_project
+        grid: miky_admin_project
+        form: miky_admin_project
         permission: true
         vars:
             all:
-                subheader: adevis.ui.manage_projects
+                subheader: miky.ui.manage_projects
                 templates:
             index:
                 icon: cube
-    type: adevis.resource
+    type: miky.resource

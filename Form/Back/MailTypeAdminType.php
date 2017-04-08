@@ -18,11 +18,11 @@ class MailTypeAdminType extends AbstractType
                 "class" => LBCLocation::class,
                 'choice_label' => 'postalCode',
                 'required' => true,
-                'label' => "adevis.ui.location"
+                'label' => "miky.ui.location"
             ))
-        ->add("email", TextType::class, array('label'=> 'adevis.ui.email'))
-        ->add("password", TextType::class, array('label'=> 'adevis.ui.password'))
-        ->add("emailPassword", TextType::class, array('label'=> 'adevis.ui.emailPassword'));
+        ->add("email", TextType::class, array('label'=> 'miky.ui.email'))
+        ->add("password", TextType::class, array('label'=> 'miky.ui.password'))
+        ->add("emailPassword", TextType::class, array('label'=> 'miky.ui.emailPassword'));
 
     }
 
@@ -35,6 +35,6 @@ class MailTypeAdminType extends AbstractType
 
     public function getName()
     {
-        return 'adevis_admin_mail_type';
+        return 'miky_admin_mail_type';
     }
 }

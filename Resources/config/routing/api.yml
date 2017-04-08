@@ -1,4 +1,4 @@
-adevis_api_lbc_message:
+miky_api_lbc_message:
     type:         rest
     resource:     Miky\Bundle\LBCBundle\Controller\Api\MessageApiController
 

@@ -3,8 +3,8 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
     <services>
 
-        <service id="adevis_mail.form.type.back.mail_type" class="Miky\Bundle\MailBundle\Form\Back\MailTypeAdminType">
-            <tag name="form.type" alias="adevis_admin_mail_type"/>
+        <service id="miky_mail.form.type.back.mail_type" class="Miky\Bundle\MailBundle\Form\Back\MailTypeAdminType">
+            <tag name="form.type" alias="miky_admin_mail_type"/>
         </service>
     </services>
 </container>

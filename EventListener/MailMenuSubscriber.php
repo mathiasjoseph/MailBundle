@@ -29,12 +29,12 @@ class MailMenuSubscriber implements EventSubscriberInterface
 
         $projectSubMenu = $menu
             ->addChild('mail')
-            ->setLabel('adevis.ui.mail')
+            ->setLabel('miky.ui.mail')
             ->setLabelAttribute('icon', 'envelope-o')
         ;
         $projectSubMenu
-            ->addChild('mail_list')//, ['route' => 'adevis_admin_project_index'])
-            ->setLabel('adevis.ui.mails_type_list')
+            ->addChild('mail_list')//, ['route' => 'miky_admin_project_index'])
+            ->setLabel('miky.ui.mails_type_list')
             ->setLabelAttribute('icon', 'diamond')
         ;
     }
