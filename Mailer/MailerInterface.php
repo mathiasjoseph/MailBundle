@@ -9,7 +9,7 @@
 namespace Miky\Bundle\MailBundle\Mailer;
 
 
-class MailerInterface
+interface MailerInterface
 {
 
 }
