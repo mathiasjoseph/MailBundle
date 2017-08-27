@@ -11,6 +11,8 @@ namespace Miky\Bundle\MailBundle\Mailer;
 
 use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
+use Symfony\Component\Routing\RouterInterface;
+use Symfony\Component\Translation\TranslatorInterface;
 
 abstract class AbstractMailer implements MailerInterface
 {
@@ -35,20 +37,19 @@ abstract class AbstractMailer implements MailerInterface
     protected $parameters;
 
     /**
-     * AbstractMailer constructor.
-     *
-     * @param \Swift_Mailer         $mailer
-     * @param UrlGeneratorInterface $router
-     * @param EngineInterface       $templating
-     * @param array                 $parameters
+     * @var TranslatorInterface
      */
-    public function __construct($mailer, UrlGeneratorInterface  $router, EngineInterface $templating, array $parameters = array())
+    protected $translator;
+
+    public function __construct($mailer, RouterInterface $router, EngineInterface $templating, TranslatorInterface $translator, array $parameters = array())
     {
         $this->mailer = $mailer;
         $this->router = $router;
         $this->templating = $templating;
+        $this->translator = $translator;
         $this->parameters = $parameters;
     }
+
 
     /**
      * @return \Swift_Mailer
@@ -82,23 +83,22 @@ abstract class AbstractMailer implements MailerInterface
         return $this->parameters;
     }
 
+
     /**
      * @param string $renderedTemplate
-     * @param string $fromEmail
      * @param string $toEmail
      */
-    protected function sendEmailMessage($renderedTemplate, $fromEmail, $toEmail)
+    protected function sendEmailMessage($renderedTemplate, $fromEmail, $toEmail, $subject)
     {
         // Render the email, use the first line as the subject, and the rest as the body
         $renderedLines = explode("\n", trim($renderedTemplate));
-        $subject = $renderedLines[0];
         $body = implode("\n", array_slice($renderedLines, 1));
 
         $message = \Swift_Message::newInstance()
             ->setSubject($subject)
             ->setFrom($fromEmail)
             ->setTo($toEmail)
-            ->setBody($body);
+            ->setBody($body, "text/html");
 
         $this->mailer->send($message);
     }
