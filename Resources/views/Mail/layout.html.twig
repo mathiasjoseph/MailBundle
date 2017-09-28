@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Seestock">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="{{ asset("favicon.ico") }}"/>
+
+	{% block stylesheets %}
+	{% endblock %}
+
+
+    <title>{% block title %}{% endblock %}</title>
+	{% block meta %}
+    {% endblock %}
+</head>
+
+<body {% block body_attributs %} {% endblock %}>
+
+{% block body_title %}
+{% endblock %}
+
+{% block body_text %}
+{% endblock %}
+
+{% block body_footer %}
+{% endblock %}
+
+{% block javascripts %}
+{% endblock %}
+
+</body>
+
+
+
