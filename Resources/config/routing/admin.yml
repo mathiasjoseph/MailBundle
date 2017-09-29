@@ -1,7 +1,3 @@
-miky_user_admin_security:
-    resource: "@MikyUserBundle/Resources/config/routing/admin/security.yml"
-    prefix : /%miky_admin.admin_path%
-
 miky_mail_admin_predefined_mail_edit:
     path: /predefined_mail
     defaults:
