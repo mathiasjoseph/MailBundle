@@ -1,0 +1,4 @@
+miky_mail_admin_predefined_mail_edit:
+    path: /predefined_mail
+    defaults:
+        _controller: MikyMailBundle:Admin/PredefinedMailAdmin:update
