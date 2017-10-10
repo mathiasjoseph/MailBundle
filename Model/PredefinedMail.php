@@ -1,12 +1,19 @@
 <?php
 
 namespace Miky\Bundle\MailBundle\Model;
+use Miky\Component\Core\Model\CommonModelInterface;
+use Miky\Component\Core\Model\CommonModelTrait;
+use Miky\Component\Resource\Model\ResourceInterface;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * PredefinedMail
+ * @UniqueEntity(fields={"context"})
  */
-abstract class PredefinedMail
+class PredefinedMail implements CommonModelInterface, ResourceInterface
 {
+
+    Use CommonModelTrait;
 
     /**
      * @var int
@@ -16,7 +23,7 @@ abstract class PredefinedMail
     /**
      * @var string
      */
-    protected $schemaAlias;
+    protected $context;
 
     /**
      * @var string
@@ -71,6 +78,21 @@ abstract class PredefinedMail
         $this->body = $body;
     }
 
+    /**
+     * @return string
+     */
+    public function getContext()
+    {
+        return $this->context;
+    }
+
+    /**
+     * @param string $context
+     */
+    public function setContext($context)
+    {
+        $this->context = $context;
+    }
 
 }
 

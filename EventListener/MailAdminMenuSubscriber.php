@@ -32,7 +32,7 @@ class MailAdminMenuSubscriber implements EventSubscriberInterface
             ->setLabelAttribute('icon', 'star');
 
         $mailSubMenu
-            ->addChild('predefined_mail', ['route' => 'miky_mail_admin_predefined_mail_edit'])
+            ->addChild('predefined_mail', ['route' => 'miky_mail_admin_predefined_mail_index'])
             ->setLabel('Message prédefini');
 
     }

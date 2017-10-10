@@ -2,6 +2,8 @@
 
 namespace Miky\Bundle\MailBundle\DependencyInjection;
 
+use Miky\Bundle\MailBundle\Doctrine\Entity\PredefinedMail;
+use Miky\Bundle\MailBundle\Doctrine\Entity\PredefinedMailTranslation;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
@@ -34,8 +36,8 @@ class Configuration implements ConfigurationInterface
         if ($this->useDefaultEntities) {
             $rootNode
                 ->children()
-                ->scalarNode('predefined_mail_class')->defaultValue(Location::class)->cannotBeEmpty()->end()
-                ->scalarNode('predefined_mail_translation_class')->defaultValue(Country::class)->cannotBeEmpty()->end()
+                ->scalarNode('predefined_mail_class')->defaultValue(PredefinedMail::class)->cannotBeEmpty()->end()
+                ->scalarNode('predefined_mail_translation_class')->defaultValue(PredefinedMailTranslation::class)->cannotBeEmpty()->end()
                 ->end();
         } else {
             $rootNode

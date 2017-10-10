@@ -5,6 +5,7 @@ namespace Miky\Bundle\MailBundle\DependencyInjection;
 use Miky\Bundle\CoreBundle\DependencyInjection\AbstractCoreExtension;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
 use Symfony\Component\DependencyInjection\Loader;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
@@ -13,7 +14,7 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
  *
  * @link http://symfony.com/doc/current/cookbook/bundles/extension.html
  */
-class MikyMailExtension extends AbstractCoreExtension
+class MikyMailExtension extends AbstractCoreExtension implements PrependExtensionInterface
 {
     /**
      * {@inheritdoc}
@@ -37,5 +38,11 @@ class MikyMailExtension extends AbstractCoreExtension
                 'predefined_mail_translation_class' => 'miky_mail.model.predefined_mail_translation.class',
             ),
         ));
+    }
+
+    public function prepend(ContainerBuilder $container)
+    {
+        $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config/app'));
+        $loader->load('config.yml');
     }
 }

@@ -6,7 +6,7 @@ namespace Miky\Bundle\MailBundle\Model;
 /**
  * PredefinedMailTranslation
  */
-abstract class PredefinedMailTranslation
+class PredefinedMailTranslation
 {
     /**
      * @var int

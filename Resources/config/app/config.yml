@@ -1,0 +1,49 @@
+miky_resource:
+    resources:
+        miky_mail.predefined_mail:
+            classes:
+                model: %miky_mail.model.predefined_mail.class%
+            contexts:
+                admin: ~
+miky_grid:
+    grids:
+        miky_mail.admin.predefined_mail:
+            resource: miky_mail.predefined_mail
+            sorting:
+                createdAt:
+                    path: createdAt
+                    direction: asc
+            fields:
+                email:
+                    type: string
+                    label: miky_user.email
+                username:
+                    type: string
+                    label: miky_user.username
+                enabled:
+                    type: twig
+                    label: miky_core.enabled
+                    options:
+                        template: MikyAdminBundle:Grid/Field:enabled.html.twig
+            filters:
+                email:
+                    type: string
+                    label: miky_user.email
+                username:
+                    type: string
+                    label: miky_user.username
+                enabled:
+                    type: boolean
+                    label: miky_core.enabled
+            batch_actions:
+                delete:
+                    label: miky_core.delete
+            actions:
+                main:
+                    create:
+                        type: create
+                item:
+                    update:
+                        type: update
+                    delete:
+                        type: delete

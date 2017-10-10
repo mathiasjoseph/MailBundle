@@ -1,1 +1,9 @@
 miky_mail:
+    predefined_mails: Mails prédéfinis
+    predefined_mail: Mail prédéfini
+    manage_predefined_mails: Gérer les mails prédéfinis
+    predefined_mail.new: Créer un mail prédéfini
+    predefined_mail.edit: Editer le mail prédéfini
+    subject: Sujet
+    body: Corps de l'email
+    context: Contexte

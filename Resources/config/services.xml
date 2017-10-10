@@ -8,9 +8,9 @@
         <import resource="services/form.xml"/>
     </imports>
     <services>
-    <service id="miky.registry.mail_predefined_schema" class="Miky\Component\Registry\ServiceRegistry">
-        <argument>Miky\Bundle\MailBundle\Model\PredefinedMailSchemaInterface</argument>
-        <argument>Predefined Mail Schema</argument>
+    <service id="miky.registry.mail_group_predefined_schema" class="Miky\Component\Registry\ServiceRegistry">
+        <argument>Miky\Bundle\MailBundle\Model\BasePredefinedMailSchemaGroup</argument>
+        <argument>Predefined Mail Schema Group</argument>
     </service>
 </services>
 </container>

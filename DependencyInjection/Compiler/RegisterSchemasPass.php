@@ -23,17 +23,17 @@ class RegisterSchemasPass implements CompilerPassInterface
      */
     public function process(ContainerBuilder $container)
     {
-        if (!$container->hasDefinition('miky.registry.mail_predefined_schema')) {
+        if (!$container->hasDefinition('miky.registry.mail_group_predefined_schema')) {
             return;
         }
 
-        $schemaRegistry = $container->getDefinition('miky.registry.mail_predefined_schema');
-        $taggedServicesIds = $container->findTaggedServiceIds('miky_mail_predefined_schema');
+        $schemaRegistry = $container->getDefinition('miky.registry.mail_group_predefined_schema');
+        $taggedServicesIds = $container->findTaggedServiceIds('miky_mail.group_predefined_schema');
 
         foreach ($taggedServicesIds as $id => $tags) {
             foreach ($tags as $attributes) {
                 if (!isset($attributes['alias'])) {
-                    throw new \InvalidArgumentException(sprintf('Service "%s" must define the "alias" attribute on "miky.mail_predefined_schema" tags.', $id));
+                    throw new \InvalidArgumentException(sprintf('Service "%s" must define the "alias" attribute on "miky_mail.group_predefined_schema" tags.', $id));
                 }
                 $schemaRegistry->addMethodCall('register', [$attributes['alias'], new Reference($id)]);
             }

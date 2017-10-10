@@ -1,4 +1,18 @@
-miky_mail_admin_predefined_mail_edit:
-    path: /predefined_mail
-    defaults:
-        _controller: MikyMailBundle:Admin/PredefinedMailAdmin:update
+miky_mail_admin_predefined_mail:
+    resource: |
+        alias: miky_mail.predefined_mail
+        section: admin
+        context: admin
+        templates: MikyAdminBundle:Crud
+        redirect: update
+        grid: miky_mail.admin.predefined_mail
+        form: Miky\Bundle\MailBundle\Form\Type\Admin\PredefinedMailAdminType
+        permission: true
+        vars:
+            all:
+                subheader: miky_mail.manage_predefined_mails
+                templates:
+                    #form: MikyAdminBundle:Product:_form.html.twig
+            index:
+                icon: cube
+    type: miky.resource_admin

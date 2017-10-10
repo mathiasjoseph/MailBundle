@@ -8,5 +8,8 @@
         <argument id="doctrine.orm.entity_manager" type="service"/>
         <argument>%miky_mail.model.predefined_mail.class%</argument>
     </service>
+    <service class="Miky\Bundle\MailBundle\Model\PredefinedSchemaManager" id="miky_predefined_schema_manager">
+        <argument id="miky.registry.mail_group_predefined_schema" type="service"/>
+    </service>
 </services>
 </container>
